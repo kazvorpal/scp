@@ -47,4 +47,9 @@ app.get('/', function(req, res){
 	res.send(weatherdata);
 })
 
-var server = app.listen(process.env.PORT||8080)
+app.set('port', process.env.PORT);
+var server = app.listen(app.get('port'), function() {
+	var host = server.address().address
+	var port = server.address().port
+	console.log("SCP Demo listening at http://%s:%s", host, port)
+})
