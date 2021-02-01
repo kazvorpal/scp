@@ -5,6 +5,7 @@ let median, mean, mode;
 let weatherdata = {};
 let weather = gw();
 
+console.log(process.env);
 const getmedian = ray => {
 	let middle = Math.floor(size = ray.length/2);
 	let sorted = ray.sort();
@@ -46,6 +47,7 @@ app.get('/', function(req, res){
 	} : "Still processing data from weather service. Hit refresh to try again...now. (if this persists, there may be a problem with the connection to Open Weather)";
 	res.send(weatherdata);
 })
+
 
 app.set('port', process.env.PORT);
 var server = app.listen(app.get('port'), function() {
