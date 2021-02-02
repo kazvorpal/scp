@@ -47,7 +47,7 @@ app.get('/', function(req, res){
 	res.send(weatherdata);
 })
 console.log(process);
-var port = process.env.port || 8080
+var port = process.env.PORT || 8080
 
 
 // app.set('port', 53409);
