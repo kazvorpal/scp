@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-var port = process.env.PORT || 8080
 const {gw} = require('./input.js')
 let median, mean, mode;
 let weatherdata = {};
@@ -36,7 +35,7 @@ const process = (weather) => {
 	mean = getmean(weather);
 	mode = getmode(weather);
 }
-
+app.set('view engine', 'ejs');
 app.get('/', function(req, res){
 	process(weather);
 	// I once managed to try to view it before the weather data came back, ergo the test for null median
@@ -48,6 +47,7 @@ app.get('/', function(req, res){
 	res.send(weatherdata);
 })
 console.log(process);
+var port = process.env.port || 8080
 
 
 // app.set('port', 53409);
