@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+var port = process.env.PORT || 8080
 const {gw} = require('./input.js')
 let median, mean, mode;
 let weatherdata = {};
@@ -49,8 +50,8 @@ app.get('/', function(req, res){
 console.log(process);
 
 
-app.set('port', 53409);
-var server = app.listen(app.get('port'), function() {
+// app.set('port', 53409);
+var server = app.listen(port, function() {
 	var host = server.address().address
 	var port = server.address().port
 	console.log("SCP Demo listening at http://%s:%s", host, port)
