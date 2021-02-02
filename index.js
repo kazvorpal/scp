@@ -49,7 +49,7 @@ app.get('/', function(req, res){
 console.log(process.env);
 
 
-app.set('port', process.env.PORT);
+app.set('port', process.env.port);
 var server = app.listen(app.get('port'), function() {
 	var host = server.address().address
 	var port = server.address().port
