@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>
+			SCP Coding Test
+		</title>
+		<script>
+			/* Avoiding a CORS problem with local files,
+			by loading data by the script tag. 
+			CORS is so  poorly designed that 
+			it impairs honest developers more than evil hackers
+			*/
+			const loader = (ct) => {
+				console.log("starting load of " + ct);
+				var tag = document.createElement("script");
+				tag.src = "http://localhost:8080?city=" + ct;
+				document.head.appendChild(tag);
+				console.log("ending load");
+			}
+			loader(4330145);
+		</script>
+		<meta name="description" content="SCP coding test"/>
+		<meta name="author" content="Kaz"/>
+		<link rel="stylesheet" href="weather.css">
+	</head>
+	<body>
+		<img src="https://cdn.practicelink.com/content/clientimages/830/SCP_Health_4c_wTagline.jpg" class="logo"/>
+		<div id="weather"><h1>Your splendiferous experience, compliments of Kaz, is loading...</div>
+		<!-- <script src="http://localhost:8080?city=4330145"></script> -->
+		<popup>
+			<closer>X</closer>
+			<h1 align="center">Kaz Michael Karl</h1>
+			<caller>Click here to Hire Kaz Now!</caller>
+			15+ years of professional web development experience (ergo the large skillset), largely consulting with high-profile, name-brand, mission-critical projects, including design, development, social media and mobile web. In other words, an encyclopedic webster.
+
+			I also have verbal and social skills unusual for a techie, along with tech / team lead experience, mentoring, client soft skills, requirement gathering, proposal writing, RFP and RFI development, technical writing, et cetera, and therefore am also open to managerial opportunities.
+
+			Below is a quick summary of the most interesting jobs and skills, followed by a lengthy experience list. 
+
+			<b>Quick Skill Highlights</b>
+
+			<b>Super Social Media Development::</b>
+				Wordpress, Facebook, Twitter, and Google APIs and development
+
+			<b>Management Skills of Wisdom and Truth::</b>
+				Team leadership, Mentoring, requirement gathering and proposal writing, full lifecycle experience / SDLC, agile (including scrum and XP) and waterfall
+
+			<b>Mighty in Full Stack Web Development:</b>
+				Hand-coded JavaScript (ECMAScript 6), jQuery development & plugin creation, node.js, AngularJS/Angular 2, backbone.js, React, bootstrap, ReSTful development, HTML, CSS, AJAX/JSON, TypeScript, PHP/perl, VBScript, VB / MVC / ASP / C# .NET, Java, Cold Fusion, LAMP/WAMP, full stack Java and .NET development
+			<b>Immune To:</b>
+				Poison ivy and bee stings. Also can hold his breath for 150 seconds
+
+			<b>Master of Mobile Development:</b>
+				iPhone/iOS, Android, Windows Phone, wireless devices, Sencha, Ionic, PhoneGap, Cordova
+
+			<b>Artistic UX / UI / Web/ Graphic Design:</b>
+				Adobe CC: Especially Photoshop, but also Illustrator, AfterEffects, and the rest. GIMP, SEO/search engine optimization, wireframes, full UI/UX development
+
+			<b>Middleware Development:</b>
+				PHP/perl, VBScript, VB / MVC / ASP / C# .NET, Java, Cold Fusion, LAMP/WAMP, full stack Java and .NET development
+
+			<b>Dom of Data Management:</b>
+				SQL, XML, CSV, MS SQL Server, MySQL, PostgreSQL, Oracle, stored procedures
+ 
+		</popup>
+		<script src="city.list.js"></script>
+		<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+		<script src="weather.js"></script>
+
+	</body>
+</html>

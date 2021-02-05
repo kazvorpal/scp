@@ -1,0 +1,62 @@
+h1 {
+	display: inline-flex;
+	padding: 32px;
+	font-family: trebuchet ms, helvetica, sans-serif;
+}
+h2 {
+	font-size: 48pt;
+	font-family: garamond, brush script mt, verdana, georgia
+}
+
+city-name {
+	display: inline-block;
+	color: #008;
+	font-weight: 200;
+	font-family: garamond;
+}
+main {
+	padding:8% 16%;
+}
+.logo {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+}
+popup {
+	position: fixed;
+	height: 90%;
+	width: 72%;
+	top:5%;
+	left:5%;
+	padding: 4% 8%;
+	white-space: pre-line;
+	background-color: white;
+	overflow: auto;
+	display: none;
+	box-shadow: 10px 10px 32px 12px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 10px 10px 32px 12px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 32px 12px rgba(0,0,0,0.75);
+}
+caller {
+	font-size: 24px;
+	font-weight: 900;
+	color:blue;
+	display: block;
+	text-align: center;
+}
+closer {
+	position: absolute;
+	top:0px;
+	right: 32px;
+	font-size: 96pt;
+	font-weight: 900;
+	cursor: crosshair;
+}
+caller {
+	font-size: 24px;
+	font-weight: 900;
+	color:blue;
+	display: block;
+	text-align: center;
+	cursor: crosshair;
+}
