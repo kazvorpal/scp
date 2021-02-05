@@ -1,20 +1,26 @@
 {
-	"name": "scp-demo",
-	"version": "1.0.0",
-	"description": "SCP isn't just for secure copying any more",
-	"main": "index.js",
-	"private": true,
-	"author": {
-		"name": "Kaz",
-		"editor": "Sublime"
-	},
-	"repository": "Remember to add this",
-	"dependencies": {
-		"body-parser": "^1.19.0",
-		"ejs": "^3.1.5",
-		"express": "^4.17.1"
-	},
-	"scripts": {
-		"start": "node ."
-	}
+  "name": "scp-demo",
+  "version": "1.0.0",
+  "description": "SCP isn't just for secure copying any more",
+  "main": "index.js",
+  "private": true,
+  "author": "Kaz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazvorpal/scp"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "devDependencies": {},
+  "keywords": ["scp", "weather", "coding", "demo", "challenge"],
+  "license": "ISC"
 }

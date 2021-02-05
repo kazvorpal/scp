@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 const {gw} = require('./input.js')
+const querystring = require('querystring');
+const url = require('url');
+const rp = require('request-promise');
 let median, mean, mode;
 let weatherdata = {};
-let weather = gw();
-
+var target;
+let weather = gw(833);
 const getmedian = ray => {
 	let middle = Math.floor(size = ray.length/2);
 	let sorted = ray.sort();
@@ -35,22 +38,35 @@ const process = (weather) => {
 	mean = getmean(weather);
 	mode = getmode(weather);
 }
+var cityweather = function(target) {
+	return new Promise(function(resolve, reject) {
+		weather = gw(833);
+	})
+}
+console.log(app.query);
 app.set('view engine', 'ejs');
 app.get('/', function(req, res){
-	process(weather);
-	// I once managed to try to view it before the weather data came back, ergo the test for null median
-	weatherdata = (median) ? {
-		median: median,
-		mean: mean, 
-		mode: mode
-	} : "Still processing data from weather service. Hit refresh to try again...now. (if this persists, there may be a problem with the connection to Open Weather)";
-	res.send(weatherdata);
+	rp("http://api.openweathermap.org/data/2.5/forecast?id=" + req.query.city + "&cnt=3&appid=98e80921c229ff15439ec677b6763e6a&units=imperial").then(
+		body => {
+			weather = [];
+	    	JSON.parse(body).list.forEach(
+	    		function(item, index) {
+	    			weather.push(item.main.temp)
+	    	});
+		process(weather);
+		weatherdata = (median) ? {
+			median: median,
+			mean: mean, 
+			mode: mode
+		} : {};
+		console.log(req.query.test);
+		res.send("var weather = " + JSON.stringify(weatherdata))
+	});
 })
 console.log(process);
-var port = 54296
+var port = 8080;
 
 
-// app.set('port', 53409);
 var server = app.listen(port, function() {
 	var host = server.address().address
 	var port = server.address().port
