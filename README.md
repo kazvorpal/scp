@@ -1,6 +1,6 @@
 # Coding test for SCP. No relation.
 
-Run  weather.js express locally, to serve the weather json on localhost port 8080, and then load index.html directly in the browser like file://[path]/index.html
+Run  weather.js express locally, to serve the weather json on http://localhost:8080 — and then load index.html directly in the browser like file://[path]/index.html
 
 The demo is therefore coded using jsonp instead of plain json, to get around the poor implementation that is CORS.
 
